@@ -1,4 +1,5 @@
-public class Circulo implements AreaCalculavel {
+public class Circulo implements AreaCalculavel,
+    PerimetroCalculavel{
 
     private double raio;
 
@@ -19,4 +20,8 @@ public class Circulo implements AreaCalculavel {
         return Math.PI*Math.pow(raio,2);
     }
 
+    @Override
+    public double calcularPerimetro() {
+        return 2*Math.PI*raio;
+    }
 }

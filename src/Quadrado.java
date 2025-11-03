@@ -1,4 +1,5 @@
-public class Quadrado implements AreaCalculavel{
+public class Quadrado implements AreaCalculavel,
+        PerimetroCalculavel{
 
     private double lado;
 
@@ -17,5 +18,10 @@ public class Quadrado implements AreaCalculavel{
     @Override
     public double calcularArea() {
         return Math.pow(lado, 2);
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return 4*lado;
     }
 }
