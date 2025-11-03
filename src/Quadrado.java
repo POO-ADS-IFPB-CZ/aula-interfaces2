@@ -1,5 +1,7 @@
+import java.io.Serializable;
+
 public class Quadrado implements AreaCalculavel,
-        PerimetroCalculavel{
+        PerimetroCalculavel, Serializable {
 
     private double lado;
 

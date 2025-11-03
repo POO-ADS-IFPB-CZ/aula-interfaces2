@@ -1,5 +1,7 @@
+import java.io.Serializable;
+
 public class Circulo implements AreaCalculavel,
-    PerimetroCalculavel{
+    PerimetroCalculavel, Serializable {
 
     private double raio;
 
@@ -24,4 +26,10 @@ public class Circulo implements AreaCalculavel,
     public double calcularPerimetro() {
         return 2*Math.PI*raio;
     }
+
+    @Override
+    public void descrever(){
+        System.out.println("Sou diferente: "+calcularArea());
+    }
+
 }

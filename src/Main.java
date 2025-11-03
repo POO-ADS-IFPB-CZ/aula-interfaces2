@@ -1,14 +1,19 @@
+import java.io.Serializable;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        /*
-        TODO:
-        Criar interface AreaCalculavel com o método calcularArea()
-        Criar classes Quadrado, Circulo, Retangulo
-        Pode usar o tipo double
-         */
+        Quadrado quadrado = new Quadrado(2);
+        quadrado.descrever();
+        Circulo circulo = new Circulo(4);
+        circulo.descrever();
+        AreaCalculavel.teste();
 
+    }
+
+    public static void salvar(Serializable serializable){
+        System.out.println("Salvo");
     }
 
 }
