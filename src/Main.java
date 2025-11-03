@@ -10,6 +10,14 @@ public class Main {
         circulo.descrever();
         AreaCalculavel.teste();
 
+        autenticar(new Aluno());
+        autenticar(new Fiscal());
+        autenticar(new Professor());
+
+    }
+
+    public static boolean autenticar(Autenticavel autenticavel){
+        return true;
     }
 
     public static void salvar(Serializable serializable){
