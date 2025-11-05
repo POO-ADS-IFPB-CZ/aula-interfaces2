@@ -1,4 +1,7 @@
-public abstract class Conta {
+import java.io.Serializable;
+
+public abstract class Conta implements Serializable,
+    Comparable<Conta>{
 
     private String titular;
     private double saldo;
@@ -34,6 +37,11 @@ public abstract class Conta {
         if(valor > 5000) return false;
         saldo += valor;
         return true;
+    }
+
+    @Override
+    public int compareTo(Conta outra){
+        return (int) (saldo - outra.saldo);
     }
 
 }
