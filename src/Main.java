@@ -4,20 +4,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ContaCorrente conta = new ContaCorrente("João", 0,
-                20);
-        conta.depositar(100);
-        conta.sacar(10);
-        conta.descontarTaxas();
-        conta.sacar(10000);
-        System.out.println(conta.getSaldo());
+        Conta contas[] = {
+                new ContaCorrente("João", 100, 10),
+                new Poupanca("Maria", 100, 5)
+        };
 
-        Poupanca poupanca = new Poupanca("Maria", 0,
-                5);
-        poupanca.depositar(100);
-        poupanca.sacar(10);
-        poupanca.renderJuros();
-        System.out.println(poupanca.getSaldo());
+        for(Conta c : contas){
+            if(c instanceof Tributavel){
+                ((Tributavel) c).descontarTaxas();
+            }
+            if(c instanceof Rentavel){
+                ((Rentavel) c).renderJuros();
+            }
+        }
+
+        for(Conta c: contas){
+            System.out.println(c.getSaldo());
+        }
 
     }
 
