@@ -12,7 +12,8 @@ public class Main {
 
         autenticar(new Aluno());
         autenticar(new Fiscal());
-        autenticar(new Professor());
+        //
+//        autenticar(new Professor());
 
     }
 
