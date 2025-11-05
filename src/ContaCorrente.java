@@ -1,4 +1,4 @@
-public class ContaCorrente extends Conta{
+public class ContaCorrente extends Conta implements Tributavel{
 
     private double taxaManutencao;
 
@@ -13,5 +13,11 @@ public class ContaCorrente extends Conta{
 
     public void setTaxaManutencao(double taxaManutencao) {
         this.taxaManutencao = taxaManutencao;
+    }
+
+    @Override
+    public boolean descontarTaxas() {
+        setSaldo(getSaldo()-taxaManutencao);
+        return true;
     }
 }

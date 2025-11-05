@@ -1,4 +1,4 @@
-public class Poupanca extends Conta{
+public class Poupanca extends Conta implements Rentavel{
 
     private double taxaJuros;
 
@@ -13,5 +13,11 @@ public class Poupanca extends Conta{
 
     public void setTaxaJuros(double taxaJuros) {
         this.taxaJuros = taxaJuros;
+    }
+
+    @Override
+    public boolean renderJuros() {
+        setSaldo(getSaldo()+(getSaldo()*taxaJuros)/100);
+        return true;
     }
 }
